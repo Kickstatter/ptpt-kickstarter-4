@@ -54,3 +54,5 @@ categoryList = data['main_category'].unique().tolist()
 
 def kickstarter_prediction(main_category, deadline, goal, launched):
     """Uses params to return if results will be successful or not"""
+    results = "SUCCESS! You're project is likely to succeed."
+    return results

@@ -17,7 +17,8 @@ def data():
         return f"Wrong URL"
     if request.method == 'POST':
         form_data = request.form
-        return render_template('data.html', form_data=form_data)
+        kick_predict = kickstarter_prediction('Category', 'Goal', 'Start', 'End')
+        return render_template('data.html', form_data=form_data, kick_predict=kick_predict)
 
 @app.route('/')
 def landing():
