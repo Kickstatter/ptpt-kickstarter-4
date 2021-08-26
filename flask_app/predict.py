@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import datetime
+
 #Load the model
 
 
@@ -9,7 +10,7 @@ from datetime import datetime
 
 
 #Load Kickstarter Dataframe
-path = '../../../kickstarter/data/ks-projects-201801.csv'
+path = '../data/ks-projects-201801.csv'
 df = pd.read_csv(path)
 
 def date_from_string(string):
@@ -49,7 +50,7 @@ def wrangle(data):
     return data
 
 data = wrangle(df)
-data['main_category'].value_counts
+categoryList = data['main_category'].unique().tolist()
 
-# def kickstarter_prediction(main_category, deadline, goal, launched, pledged, backers):
-#     """Uses params to return if results will be successful or not"""
+def kickstarter_prediction(main_category, deadline, goal, launched):
+    """Uses params to return if results will be successful or not"""
